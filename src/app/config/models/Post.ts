@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
-const PostSchema = new mongoose.Schema(
+const { Schema } = mongoose;
+mongoose.Promise = global.Promise;
+
+
+const PostSchema = new Schema(
   {
     title: String,
     description: String,

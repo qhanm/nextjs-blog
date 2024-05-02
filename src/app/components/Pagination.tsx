@@ -16,7 +16,7 @@ function Pagination(props: TPaginationProps) {
   const arrPages = new Array(totalPages).fill(undefined);
 
   const router = useRouter();
-  console.log(router);
+
   return (
     <div className={styles.paginationContainer}>
       <div className={styles.pagination}>

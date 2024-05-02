@@ -4,31 +4,23 @@ import { IconTrash } from "../components/IconTrash";
 import styles from "../page.module.css";
 import { TBlog, TParams, TResponses } from "../type";
 import Pagination from "../components/Pagination";
-
-async function fetchData(page: number, limit: number) {
-  const res = await fetch(
-    `${process.env.API_URL}/post/api?page=${page}&limit=${limit}`
-  );
-  const data: TResponses<TBlog> = await res.json();
-  const totalRecord = data.meta.totalRecord;
-
-  return {
-    data: data.data,
-    totalRecord,
-  };
-}
+import { getListPost } from "../actions";
+import FormComponent from "../components/FormComponent";
 
 export default async function Index(props: TParams) {
   const limit = props.searchParams?.limit ?? 2;
   const page = props.searchParams?.page ?? 1;
 
-  const items: { data: TBlog[]; totalRecord: number } = await fetchData(
+  const items: { data: TBlog[]; totalRecord: number } = await getListPost(
     +page,
     +limit
   );
+
   return (
     <main className={styles.main}>
       <h2 className={styles.title}>Post page</h2>
+
+      <FormComponent />
       <table className={styles.table}>
         <thead>
           <tr>

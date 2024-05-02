@@ -12,7 +12,8 @@
   width: 100%;
 }
 
-.td, .th {
+.td,
+.th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -40,11 +41,12 @@
 
 /** 
   Pagination css
-*/ 
+*/
 
 .paginationContainer {
   margin-top: 24px;
 }
+
 .pagination {
   display: inline-block;
 }
@@ -61,4 +63,26 @@
   color: white;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.form {
+  padding: 16px;
+  border-radius: 4px;
+
+  border: 1px solid #f5f5f5;
+  margin-bottom: 20px;
+}
+
+.input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.error {
+  color: rgb(167, 50, 50);
+  margin-bottom: 12px;
+}
